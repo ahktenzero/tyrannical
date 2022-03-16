@@ -157,7 +157,7 @@ local function apply_properties(c, props, callbacks)
         end
     end
 
-    awful.rules.execute(c, props, callbacks)
+--    awful.rules.execute(c, props, callbacks)
 end
 
 local function select_screen(tag)
@@ -378,7 +378,8 @@ local function apply_tyrannical_rules(c, props, callbacks)
         or c_rules.class[low_c] or {}).properties
         or {}
 
-    awful.util.table.crush(props,props_src)
+    awful.util.table.crush(props, props_src)
+    apply_properties(c,props,callbacks)
 end
 
 awful.rules.add_rule_source(
